@@ -1,1 +1,1 @@
-ls | entr make test
+ls | entr -c make test

@@ -10,6 +10,7 @@
 
 %code requires {
     #include <string>
+    #include <math.h>
     class driver;
 }
 
@@ -35,6 +36,7 @@
   SLASH   "/"
   LPAREN  "("
   RPAREN  ")"
+  POW     "^"
 ;
 
 %token <std::string> IDENTIFIER "identifier"
@@ -56,6 +58,7 @@ assignment:
 
 %left "+" "-";
 %left "*" "/";
+%right "^";
 exp:
   "number"
 | "identifier"  { $$ = drv.variables[$1]; }
@@ -64,6 +67,7 @@ exp:
 | exp "*" exp   { $$ = $1 * $3; }
 | exp "/" exp   { $$ = $1 / $3; }
 | "(" exp ")"   { $$ = $2; }
+| exp "^" exp   { $$ = pow ($1, $3); }
 %%
 
 void

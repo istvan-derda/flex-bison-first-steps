@@ -1,3 +1,6 @@
+test : calc-parser
+	./calc-parser testinput.calc++
+
 calc-parser : calc++.o driver.o parser.o scanner.o
 	g++ -o calc-parser calc++.o driver.o parser.o scanner.o
 

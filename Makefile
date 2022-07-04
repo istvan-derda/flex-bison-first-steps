@@ -26,5 +26,5 @@ parser.hh : grammar.yy
 	bison grammar.yy -o parser.cc -H
 	
 clean : 
-	rm *.o scanner.cc parser.cc parser.hh location.hh
+	rm *.o scanner.cc parser.cc parser.hh location.hh calc-parser
 

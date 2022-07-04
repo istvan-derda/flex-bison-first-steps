@@ -4,3 +4,4 @@ parser.cc
 parser.hh
 location.hh
 calc-parser
+*.swp

@@ -1,4 +1,4 @@
-three := 3
-seven := one + two * three
-fortynine := seven * seven
+three = 3
+seven = one + two * three
+fortynine = seven * seven
 fortynine - seven

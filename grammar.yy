@@ -28,7 +28,7 @@
 
 %define api.token.prefix {TOK_}
 %token
-  ASSIGN  ":="
+  ASSIGN  "="
   MINUS   "-"
   PLUS    "+"
   STAR    "*"
@@ -52,7 +52,7 @@ assignments:
 | assignments assignment {};
 
 assignment:
-  "identifier" ":=" exp { drv.variables[$1] = $3; };
+  "identifier" "=" exp { drv.variables[$1] = $3; };
 
 %left "+" "-";
 %left "*" "/";
